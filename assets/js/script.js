@@ -2,26 +2,21 @@ alert("Bienvenido al juego de Barbie, que lo disfrutes!");
 let firstWord = "Hi Barbie, Hi Ken :)";
 console.log(firstWord);
 
-const btn = document.getElementById("btn");
+function btn() {
+    //circulo color
+    const color = document.getElementById("color").value;
+    const colorCircle = document.querySelector(".colorCircle");
+    colorCircle.style.backgroundColor = color;
 
-btn.addEventListener("click", button);
+    //input cantidad
+    const cantidad = parseInt(document.getElementById("cantidad").innerHTML.replace("cantidad: ", ""));
+    const amount = parseInt(document.getElementById("amount").value);
+    document.getElementById("cantidad").innerHTML = "Amount: " + amount;
 
-function button() {
-    const amount = Number(document.getElementById("amount").value);
-    const color = String(document.getElementById("color").value);
-    const total = Number(document.getElementById("total").value);
+    // resultado multiplicacion
+    const priceValue = parseInt(document.getElementById("price").innerHTML.replace("Price: ", ""));
+    const amountValue = parseInt(document.getElementById("amount").value);
 
-    answerContainer.innerHTML = "<li> Total: " + total + "</li><li> Amount: " + amount + "</li><li> Color: " + color + "</li>";
+    const resultado = priceValue * amountValue;
+    document.getElementById("numeroTotal").innerHTML = `Total: $${resultado}`;
 }
-
-//function calc() {
-//    const amount = Number(document.getElementById("amount").value);
-//    const total = Number(document.getElementById("total").value);
-//    const price = document.getElementById("price").innerText;
-//    console.log("Total: ", price * 4);}
-
-//let circle = document.querySelector("div");
-//input = document.querySelector("input");
-//input.addEventListener("input", () => {
-//    circle.style.background = input.value;
-//});
